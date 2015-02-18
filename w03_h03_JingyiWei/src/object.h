@@ -13,8 +13,11 @@ class object{
 public:
     
     void setup();
-    void update();
-    void draw(float xPos, float yPos);
+    void update(ofVec2f P);
+    void draw();
+    
+    ofVec2f pos;
+    
 };
 
 

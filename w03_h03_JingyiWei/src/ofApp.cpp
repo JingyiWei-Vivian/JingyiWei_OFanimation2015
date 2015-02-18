@@ -20,22 +20,10 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     
-//    float num = ofxGaussian();
-//    float sd = 100;
-//    float mean = ofGetWindowWidth()/2;
-//    
-//    x = (sd * num) + mean;
-    
-    thisObject.update();
-    
-    for (int i=0; i<1001; i++){
-        
-        objectList[i].update();
-    }
-}
+    ofVec2f myPos;
 
-//--------------------------------------------------------------
-void ofApp::draw(){
+    myPos = thisObject.pos;
+    
     
     float num = ofxGaussian();
     float sd = 100;
@@ -43,11 +31,23 @@ void ofApp::draw(){
     
     x = (sd * num) + mean;
     
-    thisObject.draw(x, ofGetHeight());
+    thisObject.update(myPos);
     
     for (int i=0; i<1001; i++){
         
-        objectList[i].draw(x, ofGetHeight());
+        objectList[i].update(myPos);
+
+    }
+}
+
+//--------------------------------------------------------------
+void ofApp::draw(){
+    
+    thisObject.draw();
+    
+    for (int i=0; i<1001; i++){
+        
+        objectList[i].draw();
     }
 }
 

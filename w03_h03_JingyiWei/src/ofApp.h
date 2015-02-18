@@ -26,4 +26,5 @@ class ofApp : public ofBaseApp{
     object thisObject;
     
     vector<object> objectList;
+
 };
