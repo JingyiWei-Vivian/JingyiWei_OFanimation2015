@@ -6,7 +6,7 @@ void ofApp::setup(){
     //setup the canvas
     ofBackground(0);
     ofSetVerticalSync(true);
-    ofSetCircleResolution(5);
+    ofSetCircleResolution(3);
 }
 
 //--------------------------------------------------------------
@@ -33,9 +33,11 @@ void ofApp::draw(){
     float spacing = 20;
     for (int x = 0; x < ofGetWidth(); x = x+spacing){
         for (int y = 0; y < ofGetHeight(); y = y+spacing){
-
+            
+            
             ofSetColor(x, ofRandom(255), y, ofRandom(10, 100));
             ofCircle(x, y, rot);
+
         }
     }
 }
