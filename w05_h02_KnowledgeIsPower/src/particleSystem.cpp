@@ -28,7 +28,7 @@ void particleSystem::update(ofVec2f _force){
     for (int i=0; i<particleList.size(); i++){
         
         ofVec2f diff = mousePos - particleList[i].pos;
-        attraction.set(diff.getNormalized()*0.3);
+        attraction.set(diff.getNormalized()*0.5);
         
         particleList[i].resetForce();
         particleList[i].applyForce(attraction);
@@ -36,7 +36,7 @@ void particleSystem::update(ofVec2f _force){
         
     }
 
-    while (particleList.size() > 3000){
+    while (particleList.size() > 1000){
         particleList.erase(particleList.begin());
     }
     
@@ -47,9 +47,9 @@ void particleSystem::draw(){
     
     
     for (int i=0; i<particleList.size(); i++){
-
+        
+        ofSetColor(ofRandom(100, 255), ofRandom(100, 255), ofRandom(100, 255), ofRandom(0,i++));
             particleList[i].draw();
-            ofLine(particleList[i].pos.x, particleList[i].pos.y, particleList[i-1].pos.x, particleList[i-1].pos.y);
     }
 
 }

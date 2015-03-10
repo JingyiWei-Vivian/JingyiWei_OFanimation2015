@@ -11,9 +11,7 @@
 
 class Particle {
 public:
-    
-    //built-in function: constractor, it's called by default
-    //the difference between contractor and setup, setup is the function that needs to be called in order to run
+
     Particle(ofVec2f _pos);
     
     void resetForce();
