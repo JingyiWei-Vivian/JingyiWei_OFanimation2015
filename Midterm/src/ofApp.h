@@ -40,7 +40,7 @@ class ofApp : public ofBaseApp{
     ofVec2f force;
     ofColor color;
     ofVec2f vel;
-    
-    //ofVec2f attraction;
+
+    //ofVec2f repulsion;
 
 };
